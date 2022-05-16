@@ -17,7 +17,7 @@ import lombok.Setter;
 @NoArgsConstructor
 @Setter
 @Getter
-public class detalle {
+public class Detalle {
     private int iddetalle;
     private double precio;
     private int cantidad;

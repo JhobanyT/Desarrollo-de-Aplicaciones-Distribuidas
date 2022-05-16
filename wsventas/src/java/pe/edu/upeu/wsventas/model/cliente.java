@@ -18,7 +18,7 @@ import lombok.Setter;
 @Setter
 @Getter
 
-public class cliente {
+public class Cliente {
     private int idcliente;
     private String nombre;
     private String apellidos;
