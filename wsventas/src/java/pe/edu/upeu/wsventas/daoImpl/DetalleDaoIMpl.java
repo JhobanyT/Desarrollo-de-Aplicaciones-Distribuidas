@@ -25,7 +25,7 @@ public class DetalleDaoIMpl implements DetalleDao{
     
     @Override
     public int create(Detalle esc) {
-        String SQL = "INSERT INTO escuela(nombre) VALUES(?)";
+        String SQL = "INSERT INTO detalle(precio,cantidad,idproducto,idventa) VALUES(?,?,?,?)";
         int x = 0;
         try {
             cx = Conexion.getConex();
@@ -43,7 +43,7 @@ public class DetalleDaoIMpl implements DetalleDao{
 
     @Override
     public int update(Detalle esc) {
-        String SQL = "UPDATE escuela SET nombre=? WHERE idescuela=?";
+        String SQL = "UPDATE detalle SET precio=?,cantidad=?,idproducto=?,idventa=? WHERE iddetalle=?";
         int x = 0;
         try {
             cx = Conexion.getConex();
@@ -62,7 +62,7 @@ public class DetalleDaoIMpl implements DetalleDao{
 
     @Override
     public int delete(int id) {
-        String SQL = "DELETE FROM escuela WHERE idescuela=?";
+        String SQL = "DELETE FROM detalle WHERE iddetalle=?";
         int x = 0;
         try {
             cx = Conexion.getConex();
@@ -76,7 +76,7 @@ public class DetalleDaoIMpl implements DetalleDao{
     }
     @Override
     public Detalle read(int id) {
-        String SQL = "SELECT *FROM escuela WHERE idescuela=?";
+        String SQL = "SELECT *FROM detalle WHERE iddetalle=?";
         Detalle esc = new Detalle();
         try {
             cx = Conexion.getConex();
@@ -98,7 +98,7 @@ public class DetalleDaoIMpl implements DetalleDao{
 
     @Override
     public List<Detalle> readAll() {
-        String SQL = "SELECT *FROM escuela";
+        String SQL = "SELECT *FROM detalle";
         List<Detalle> lista = new ArrayList<>();
         try {
             cx = Conexion.getConex();
